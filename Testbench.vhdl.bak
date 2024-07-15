@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity TestBench is 
+end; 
+
+architecture bhv of TestBench is 
+	component Shift_Rows is
+		port (input: in std_logic_vector(127 downto 0); output: out std_logic_vector(127 downto 0));
+	end component Shift_Rows;
+	
+	signal output: std_logic_vector(127 downto 0);
+	--signal input: std_logic_vector(127 downto 0) := "";
+begin 
+	dut_instance: Shift_Rows port map (x"63637c7c7b7bc5c57676c0c07575d2d2", output);
+end bhv;
